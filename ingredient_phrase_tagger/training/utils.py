@@ -288,6 +288,7 @@ def export_data(lines):
     """ Parse "raw" ingredient lines into CRF-ready output """
     output = []
     for line in lines:
+        line = line.encode('ascii', 'replace')
         line_clean = re.sub('<[^<]+?>', '', line)
         tokens = tokenizer.tokenize(line_clean)
 
