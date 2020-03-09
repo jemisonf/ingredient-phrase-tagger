@@ -1,0 +1,12 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/goosedb/ingredient-phrase-tagger-api",
+        "-f",
+        "Dockerfile.api",
+        ".",
+      ]
+images: ["gcr.io/goosedb/ingredient-phrase-tagger-api"]

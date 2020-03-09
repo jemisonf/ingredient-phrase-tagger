@@ -1,0 +1,17 @@
+FROM gcr.io/goosedb/ingredient-tagger-base:v0
+
+COPY requirements.txt .
+RUN python -m pip install -r requirements.txt
+
+COPY ingredient_phrase_tagger/training/parse_ingredients.py ./ingredient_phrase_tagger/training/parse_ingredients.py
+
+COPY server.py .
+
+ENV MODEL_PATH /model/20200308_0244-nyt-ingredients-snapshot-2015-e53f3e2.crfmodel
+
+ENV FLASK_APP server.py
+
+ENV PORT 5000
+
+CMD ["python", "-m", "flask", "run", "--host=0.0.0.0"]
+
