@@ -15,5 +15,4 @@ def ingredients():
         body = request.get_json()
         crf_output = parse_ingredients._exec_crf_test(body["data"], model_path)
         results = json.loads(parse_ingredients._convert_crf_output_to_json(crf_output.rstrip().split("\n")))
-        print(results)
         return {"data": results}
