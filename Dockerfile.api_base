@@ -1,0 +1,5 @@
+FROM mtlynch/ingredient-phrase-tagger
+
+RUN mkdir /model
+RUN bin/train-prod-model /model
+RUN MODEL_FILE=$(find $MODEL_DIR -name '*.crfmodel')
