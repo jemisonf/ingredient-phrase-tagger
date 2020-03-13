@@ -1,5 +1,26 @@
 # CRF Ingredient Phrase Tagger
 
+## Ingredient Phrase Tagger API
+
+**read here for information about new code**
+
+The API server code is found in `server.py`.
+
+Requirements:
+* Python 2.7
+
+To install:
+* `python -m pip install -r requirements.txt`
+
+To run:
+* `FLASK_APP=server.py python -m flask run --host=0.0.0.0`
+
+Docker instructions:
+* Can pull using `docker pull gcr.io/goosedb/ingredient-phrase-tagger-api:latest`
+* To build, use `docker build -f Dockerfile.api .`
+
+
+
 [![Build Status](https://travis-ci.org/mtlynch/ingredient-phrase-tagger.svg?branch=master)](https://travis-ci.org/mtlynch/ingredient-phrase-tagger) [![Docker Pulls](https://img.shields.io/docker/pulls/mtlynch/ingredient-phrase-tagger.svg?maxAge=604800)](https://hub.docker.com/r/mtlynch/ingredient-phrase-tagger/) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE.md)
 
 ## Fork Notes
